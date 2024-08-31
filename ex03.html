@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>swap web components </title>
+    <script>
+          function swap_element(){
+            swap(document.getElementById('h01'), document.getElementById('h02'))
+            swap(document.getElementById('p01'), document.getElementById('p02'))
+          }
+          function swap(ele1, ele2){
+            var msg
+            msg = ele1.innerHTML
+            ele1.innerHTML = ele2.innerHTML
+            ele2.innerHTML = msg
+          }
+          function show_contents(idx){
+             var ele = document.getElementById(idx)
+             alert(ele.innerHTML)
+          }
+          function insert_contents(idx, str){
+             var ele = document.getElementById(idx)
+             ele.innerHTML = str
+          }
+
+    </script>
+  </head>
+  <body>
+    <h1 id = "h01" onclick = 'swap_element()'></h1>
+    <p  id = "p01" onclick = 'show_contents("p01")'></p>
+    <h2 id = "h02" onclick = 'swap_element()'></h2>
+    <p  id = "p02" onclick =  'show_contents("p02")'></p>
+    <script>
+          var msg
+          insert_contents("h01","JavaScript")
+          msg = "JavaScript often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2023, 98.7% of websites use JavaScript on the client side for webpage behavior,often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices."
+          insert_contents("p01", msg)
+          insert_contents("h02","Python")
+          msg = "Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation via the off-side rule. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming. It is often described as a  language due to its comprehensive standard library."
+          insert_contents("p02", msg)
+    </script>
+  </body>
+</html>
